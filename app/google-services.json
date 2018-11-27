@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "583855386426",
+    "firebase_url": "https://messfood-9a8f0.firebaseio.com",
+    "project_id": "messfood-9a8f0",
+    "storage_bucket": "messfood-9a8f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583855386426:android:5f120ab3740bf95f",
+        "android_client_info": {
+          "package_name": "com.example.anu.feedthehungry2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583855386426-0oojqdv6ev2ssl7fiea1819kg0it5jr9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anu.feedthehungry2",
+            "certificate_hash": "7da5da8468c09e5200b581bf6adfee8f569fd50a"
+          }
+        },
+        {
+          "client_id": "583855386426-ognj5mm5p99n91ee6cqgfv7feo01hp2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVoZVQqrmFFv4o0eyNeZgzyF3Uc5cZULQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583855386426-ognj5mm5p99n91ee6cqgfv7feo01hp2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
