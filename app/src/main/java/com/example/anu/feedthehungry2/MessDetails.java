@@ -37,8 +37,8 @@ public class MessDetails extends AppCompatActivity {
         Intent emailIntent=new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto",email,null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT,"You Have New Food Donation Order");
-        emailIntent.putExtra(Intent.EXTRA_TEXT,mtext1.getText().toString()+"\n"+mtext2.getText().toString()+"\n"+mtext3.getText().toString()+"\n"+mtext4.getText().toString());
-        startActivity(Intent.createChooser(emailIntent,"SEND EMAIL ..."));
+        emailIntent.putExtra(Intent.EXTRA_TEXT,"Details Are As Follows *****"+"\n"+"Food Quantity : "+mtext1.getText().toString()+"\n"+"Food Type : "+mtext2.getText().toString()+"\n"+"Hostel Address : "+mtext3.getText().toString()+"\n"+"Contact Number : "+mtext4.getText().toString());
+        startActivity(Intent.createChooser(emailIntent,"NOTIFY NGO ..."));
 
     }
 }

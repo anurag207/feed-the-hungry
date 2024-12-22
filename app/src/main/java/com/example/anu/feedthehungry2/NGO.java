@@ -27,10 +27,20 @@ public class NGO extends AppCompatActivity {
         ListView listView = findViewById(R.id.ListView);
 
         final ArrayList<String> myNgo = new ArrayList<String>();
+        myNgo.add("ngoregid1@gmail.com");
+        myNgo.add("ngoregid2@gmail.com");
+        myNgo.add("ngoregid3@gmail.com");
+        myNgo.add("ngoregid4@gmail.com");
+        myNgo.add("ngoregid5@gmail.com");
+        myNgo.add("ngoregid6@gmail.com");
+        myNgo.add("ngoregid7@gmail.com");
+        myNgo.add("ngoregid8@gmail.com");
+        myNgo.add("ngoregid9@gmail.com");
+        myNgo.add("ngoregid10@gmail.com");
+        myNgo.add("ngoregid11@gmail.com");
+        myNgo.add("ngoregid12@gmail.com");
+        myNgo.add("ngoregid13@gmail.com");
         myNgo.add("anuragkamboj20@gmail.com");
-        myNgo.add("iiiengineer786786@gmail.com");
-        myNgo.add("kgupta_be16@thapar.edu");
-        myNgo.add("akamboj1_be16@thapar.edu");
 
         ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,myNgo);
         listView.setAdapter(arrayAdapter);

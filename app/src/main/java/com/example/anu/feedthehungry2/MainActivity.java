@@ -52,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
         u1.setPassword(passwrd);
         u1.setUsername(s1);
         if(TextUtils.isEmpty(s1)||TextUtils.isEmpty(passwrd)){
-            Toast.makeText(this, "Empty field is not allowed..", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this,MainActivity.class));
+            Toast.makeText(this, "Empty field is not allowed!!", Toast.LENGTH_LONG).show();
+        //startActivity(new Intent(this,MainActivity.class));
         }
        else{
             mainref.getReference().child("Users/"+s1).setValue(u1).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     //move to next activity
-                    startActivity(new Intent(MainActivity.this,NGO.class));
+                    Toast.makeText(MainActivity.this, "User Registered Successfully", Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -70,39 +70,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-         FirebaseDatabase userdb=FirebaseDatabase.getInstance();
-
-         userdb.getReference().child("Users").child(user1.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
-             @Override
-             public void onDataChange(DataSnapshot dataSnapshot) {
-                 int count=0;
+         if(user1.getText().toString().isEmpty()&&pass.getText().toString().isEmpty()){
+            Toast.makeText(MainActivity.this,"Empty Field not Allowed",Toast.LENGTH_LONG).show();
+         }else{
+             FirebaseDatabase userdb=FirebaseDatabase.getInstance();
+             userdb.getReference().child("Users").child(user1.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+                 @Override
+                 public void onDataChange(DataSnapshot dataSnapshot) {
+                     int count=0;
                      Users user=(Users)dataSnapshot.getValue(Users.class);
-                     if(user.getUsername()!=""){
-                         Toast.makeText(MainActivity.this, "Error Username not registered", Toast.LENGTH_SHORT).show();
-                   startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                     if(!dataSnapshot.exists()){
+                         Toast.makeText(MainActivity.this, "Error!! Username Not Registered", Toast.LENGTH_SHORT).show();
                      }
                      else if(user.getUsername().equals(user1.getText().toString()))
                      {
                          if(user.getPassword().equals(pass.getText().toString()))
                          {
-                             startActivity(new Intent(MainActivity.this,NGO.class));
+                             Toast.makeText(MainActivity.this,"Welcome!!",Toast.LENGTH_LONG).show();
+                             startActivity(new Intent(MainActivity.this,MessFunctions.class));
                          }
                          else{
-                             Toast.makeText(MainActivity.this, "Invalid Password", Toast.LENGTH_SHORT).show();
+                             Toast.makeText(MainActivity.this, "Invalid Password!!", Toast.LENGTH_LONG).show();
                          }
                      }
                      else{
-                         Toast.makeText(MainActivity.this, "not registered", Toast.LENGTH_SHORT).show();
+                         Toast.makeText(MainActivity.this, "User Not Registered!!", Toast.LENGTH_LONG).show();
                      }
 
 
-             }
+                 }
 
-             @Override
-             public void onCancelled(DatabaseError databaseError) {
+                 @Override
+                 public void onCancelled(DatabaseError databaseError) {
 
-             }
-         });
+                 }
+             });
+
+         }
+
 
     }
 }
